@@ -9,7 +9,6 @@
   網頁展示的內容除原本的場景外，還加入了對指定圖像風格化後的場景，一方面展示了NeRF不是只能進行單純的場景重建，還能進行編輯等操作，另一方面也為我們的成果增添了獨特性。
   
 ------------------
-  Our independent study centred around NeRF(Neural Radiance Fields), we attempted to rebuild scenery in NYCU and exhibit it online. While discussing applied potential and limitation of NeRF.
-  
-  Besides normal campus scenery, our website also demonstrated stylized versions. On the one hand showing that NeRF can do more than scene rebuild. On the other hand, those stylized scenes increase the uniqueness of our study.
-  
+Our project focuses on NeRF and its extensions, aiming to reconstruct campus scenes and display them on a website for public viewing. Through this process, we explore the potential and limitations of NeRF in its current applications.
+
+The web page showcases not only the original scenes but also incorporates stylized versions of the scenes. This demonstrates that NeRF can go beyond simple scene reconstruction and perform editing operations. Additionally, it adds uniqueness to our achievements.
