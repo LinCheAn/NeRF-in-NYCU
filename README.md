@@ -23,3 +23,16 @@
   To address the prolonged rendering time limitations of NeRF, we have introduced real-time rendering techniques for the scenes, providing an enhanced user experience when browsing the website.
   
   The web page showcases not only the original scenes but also incorporates stylized versions of the scenes. This demonstrates that NeRF can go beyond simple scene reconstruction and perform editing operations. Additionally, it adds uniqueness to   our achievements.
+
+-------------------
+  Citation & their github repositories : 
+  
+  NeRF : https://github.com/bmild/nerf
+  
+  MipNeRF-360 : https://github.com/google-research/multinerf
+  
+  Plenoxels : https://github.com/sxyu/svox2
+
+  ARF : https://github.com/Kai-46/ARF-svox2
+  
+  Mobile NeRF : https://github.com/google-research/jax3d/tree/main/jax3d/projects/mobilenerf
