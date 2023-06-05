@@ -13,9 +13,13 @@
   
   我們的專題以NeRF與其延伸研究為主軸，試圖將校內場景重建並放置到網站上供大眾瀏覽，並藉由此過程探討NeRF目前在應用上的潛力與限制。
   
+  為了解決NeRF所需之極長渲染時間的限制，我們引入了即時渲染場景的相關技術，提供瀏覽網站時更佳的使用者體驗。
+  
   網頁展示的內容除原本的場景外，還加入了對指定圖像風格化後的場景，一方面展示了NeRF不是只能進行單純的場景重建，還能進行編輯等操作，另一方面也為我們的成果增添了獨特性。
   
 ------------------
   Our project focuses on NeRF and its extensions, aiming to reconstruct campus scenes and display them on a website for public viewing. Through this process, we explore the potential and limitations of NeRF in its current applications.
-
+  
+  To address the prolonged rendering time limitations of NeRF, we have introduced real-time rendering techniques for the scenes, providing an enhanced user experience when browsing the website.
+  
   The web page showcases not only the original scenes but also incorporates stylized versions of the scenes. This demonstrates that NeRF can go beyond simple scene reconstruction and perform editing operations. Additionally, it adds uniqueness to   our achievements.
