@@ -1,0 +1,314 @@
+<!DOCTYPE HTML>
+<html>
+<style>
+    .shape-ex4 {
+        width: 250px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        line-height: 40px;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.25);
+        border: 1px solid #000;
+        position: absolute;
+        left: 150px;
+        top: 600px;
+        font-size: 30px;
+        transition: all .3s linear;
+    }
+
+    .shape-ex4>p {
+        position: relative;
+        z-index: 1;
+    }
+
+    .shape-ex4::before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        display: block;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transition: all .3s ease;
+    }
+
+    .shape-ex4:hover {
+        color: #fff;
+    }
+
+    .shape-ex4:hover::before {
+        width: 100%;
+    }
+
+    .shape-ex3 {
+        width: 250px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        line-height: 40px;
+        color: #000;
+        background-color: rgba(255, 255, 255, 0.25);
+        border: 1px solid #000;
+        position: absolute;
+        left: 500px;
+        top: 600px;
+        font-size: 30px;
+        transition: all .3s linear;
+    }
+
+    .shape-ex3>p {
+        position: relative;
+        z-index: 1;
+    }
+
+    .shape-ex3::before {
+        content: "";
+        width: 0%;
+        height: 100%;
+        display: block;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all .3s ease;
+    }
+
+    .shape-ex3:hover {
+        color: #fff;
+    }
+
+    .shape-ex3:hover::before {
+        width: 100%;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+</style>
+<div id="info" style="position: absolute; left: 1000px; top: 50px;font-size: 40px">
+    <div id="styledisplay1"></div>
+    <div id="styledisplay2"></div>
+    <div id="originaldisplay"></div>
+</div>
+
+<head>
+    <script>
+        x = 0;
+        var images = [];
+        var loadedCount = 0;
+        const params = new URL(window.location.href).searchParams;
+        const objname = params.get("obj").split("_")[0];
+        const stylename = params.get("obj").split("_")[1];
+        var start_index = 0, end_index = 0, direction = 1;
+        //alert(objname);
+        switch (objname) {
+            case "NYCU":
+                x = 85, start_index = 0, end_index = 239;
+                break;
+            case "BusStop":
+                x = 175, start_index = 155, end_index = 210;
+                break;
+            case "phoenix":
+                x = 45, start_index = 0, end_index = 239;
+                break;
+            case "wing":
+                x = 45, start_index = 0, end_index = 239;
+                break;
+            case "cow":
+                x = 105, start_index = 95, end_index = 130, direction = -1;
+                break;
+            case "computer":
+                x = 180, start_index = 170, end_index = 200;
+                break;
+            case "gazebo":
+                x = 100, start_index = 75, end_index = 150, direction = -1;
+                break;
+            case "NCTU":
+                x = 100, start_index = 85, end_index = 145, direction = -1;
+                break;
+            default:
+                alert('scene name error');
+        }
+
+        function change_add(objname, stylename, start_index, end_index) {
+            if (start_index != 0 && x == end_index)
+                return;
+            x++;
+            x %= (end_index + 1);
+            if (x < start_index)
+                x = start_index;
+            document.getElementById("photo").src = "./images/" + objname + "_" + stylename + "/frame_" + x + ".jpg";
+        }
+
+        function change_min(objname, stylename, start_index, end_index) {
+            if (start_index != 0 && x == start_index)
+                return;
+            x--;
+            if (x < start_index)
+                x = end_index;
+            document.getElementById("photo").src = "./images/" + objname + "_" + stylename + "/frame_" + x + ".jpg";
+        }
+
+        function preloadImages(scene_name, stylename, start_index, end_index) {
+            for (var i = start_index; i <= end_index; i++) {
+                var image = new Image();
+                image.src = "./images/" + scene_name + "_" + stylename + "/frame_" + i + ".jpg";
+                image.onload = function () {
+                    loadedCount++;
+                    var element = document.getElementById("myDiv");
+                    var per = Math.floor(loadedCount * 100 / (end_index - start_index + 1));
+                    element.innerHTML = "Loading... " + per + "%";
+                };
+                images.push(image);
+            }
+            //alert("preload done");
+        }
+
+        function show_style(objname, stylename, start_index, end_index) {
+
+            var scene_var = window.location.href;
+            var splitarr = scene_var.split("_");
+
+            var taskname = splitarr[0];
+            //var  = splitarr[1];
+            //alert(objname);
+
+            // Load style images
+            var splitArr = objname.split("_");
+            var style = splitArr.slice(-1);
+            var style_index = [], Type = "";
+            let styleimage1, styleimage2, original;
+            switch (objname) {
+                case "NYCU":
+                    style_index = ["14", "3"], Type = "synthetic";
+                    break;
+                case "phoenix":
+                    style_index = ["44", "85"], Type = "synthetic";
+                    break;
+                case "BusStop":
+                    style_index = ["19", "133"], Type = "forwardfacing";
+                    break;
+                case "cow":
+                    style_index = ["19", "93"], Type = "forwardfacing";
+                    break;
+                case "computer":
+                    style_index = ["18", "48"], Type = "forwardfacing";
+                    break;
+                case "gazebo":
+                    style_index = ["18", "137"], Type = "forwardfacing";
+                    break;
+                case "NCTU":
+                    style_index = ["6", "piano"], Type = "forwardfacing";
+                    break;
+
+                default:
+                    alert('scene name error');
+            }
+            styleimage1 = "<a href='http://140.113.24.102:8000/ARFshower.html?obj=" + objname + "_" + style_index[0] + "'> \
+                <img src='./images/style/"+ style_index[0] + ".jpg' style='width: 330px; height: auto;'>";
+            styleimage2 = "<a href='http://140.113.24.102:8000/ARFshower.html?obj=" + objname + "_" + style_index[1] + "'> \
+                <img src='./images/style/"+ style_index[1] + ".jpg' style='width: 330px; height: auto;'>";
+            original = "<a href='http://140.113.24.102:8000/view_" + Type + ".html?obj=" + objname + "'> \
+                <img src='./images/" + objname + ".jpg' style='width: 330px; height: auto;'>";
+
+            const blocks = ["styledisplay1", "styledisplay2", "originaldisplay"];
+            const imgs = [styleimage1, styleimage2, original];
+
+            for (let i = 0; i < blocks.length; i++) {
+                if (style != style_index[i]) {
+                    document.getElementById(blocks[i]).innerHTML = imgs[i];
+                }
+            }
+            preloadImages(objname, stylename, start_index, end_index);
+        }
+
+    </script>
+    <br>
+    <br>
+
+    <div id="myDiv" style="position: absolute; top: 0px ;font-size: 30px; color:rgb(20, 146, 204)"></div>
+    <div style="position: absolute; left: 1000px; top: 5px ;font-size: 30px; color:rgb(206, 90, 14)">Style
+        Selection
+    </div>
+    <img id="photo" src='' width="950" height="650" onclick="change()">
+    <script>
+        var imagePath = "./images/" + objname + "_" + stylename + "/frame_" + x + ".jpg";
+        var imgElement = document.getElementById('photo');
+        if (objname == "NCTU" || objname == "NYCU") {
+            imgElement.style.width = "975px";
+            imgElement.style.height = "625px";
+        }
+        imgElement.src = imagePath;
+    </script>
+    <br>
+    <div class="button-container">
+        <div class="shape-ex4" id="leftBtn">
+            <p>LEFT</p>
+        </div>
+        <div class="shape-ex3" id="rightBtn">
+            <p>RIGHT</p>
+        </div>
+    </div>
+    <!-- <input class="shape-ex4" id="leftBtn" type="button" value="LEFT" style="width:150px;height:50px;"
+        onclick="change_min()">
+    <input class="btn" id="rightBtn" type="button" value="RIGHT" style="width:150px;height:50px;"
+        onclick="change_add()"> -->
+    <script type="text/javascript">
+        var tid;
+        if (direction == 1) {
+            var btn2 = window.document.getElementById("rightBtn");
+            var btn1 = window.document.getElementById("leftBtn");
+        }
+        else {
+            var btn1 = window.document.getElementById("rightBtn");
+            var btn2 = window.document.getElementById("leftBtn");
+        }
+        btn1.onclick = function (e) {
+            change_add(objname, stylename, start_index, end_index);
+        };
+        btn1.onmousedown = function (e) {
+            tid = setInterval(function () {
+                change_add(objname, stylename, start_index, end_index);
+            }, 50);
+        };
+        btn1.onmouseup = function (e) {
+            clearInterval(tid);
+        }
+        btn1.onmouseout = function (e) {
+            clearInterval(tid);
+        }
+
+
+        btn2.onclick = function (e) {
+            change_min(objname, stylename, start_index, end_index);
+        };
+        btn2.onmousedown = function (e) {
+            tid = setInterval(function () {
+                change_min(objname, stylename, start_index, end_index);
+            }, 50);
+        };
+        btn2.onmouseup = function (e) {
+            clearInterval(tid);
+        }
+        btn2.onmouseout = function (e) {
+            clearInterval(tid);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        show_style(objname, stylename, start_index, end_index);
+    </script>
+</body>
+
+</html>
