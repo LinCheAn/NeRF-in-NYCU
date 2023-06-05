@@ -25,7 +25,7 @@
   The web page showcases not only the original scenes but also incorporates stylized versions of the scenes. This demonstrates that NeRF can go beyond simple scene reconstruction and perform editing operations. Additionally, it adds uniqueness to   our achievements.
 
 -------------------
-  Citation & their github repositories : 
+  Citation & Their Github Repositories : 
   
   NeRF : https://github.com/bmild/nerf
   
