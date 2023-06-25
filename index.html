@@ -1,0 +1,256 @@
+<!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>NeRF in NYCU(shrunk ver)</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="assets/css/noscript.css" />
+	</noscript>
+</head>
+
+<body class="homepage is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<div id="header">
+
+			<!-- Inner -->
+			<div class="inner">
+				<header>
+					<h1><a href="index.html" id="logo">NeRF in NYCU</a></h1>
+					<hr />
+					<p>Project presented by </p>
+					<p>林哲安 許登豪 陳尚奇</p>
+				</header>
+
+				<footer>
+					<a href="#banner" class="button circled scrolly">Start</a>
+				</footer>
+			</div>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="#main" class="scrolly">Campus</a></li>
+					<li><a href="#banner" class="scrolly">Scene</a></li>
+					<li><a href="#footer" class="scrolly">Code</a></li>
+				</ul>
+			</nav>
+
+		</div>
+
+		<!-- Banner -->
+		<section id="banner">
+			<header>
+				<h2>歡迎來到 <strong>NeRF 校園景觀服務</strong>.<p>
+				</h2>
+			</header>
+
+			<body>
+				<h3>Google的街景是一個行之有年、廣受大眾熟悉的服務，但其街景照片時有扭曲的情形且觀賞角度受限而難以擬真地還原實地場景<p>
+				</h3>
+				<h3>而近年興起的三維重建技術NeRF(Neural Radiance Field)能夠透過一定數量的照片，還原出逼真的場景，甚至渲染出資料集內未提供的角度<p>
+				</h3>
+				<h3>我們決定以此為題，在研究不同NeRF延伸技術的同時，著手將校園中的場景製作成一系列的交大街景，讓大家能夠以更多的角度領略偉大大學風光<p>
+				</h3>
+
+				<h3 style="color:red">  warning: this is "github page" version of our project, simplified vesrion of original due to github storage limit</h3>
+			</body>
+		</section>
+
+		<!-- Carousel -->
+		<section class="carousel">
+			<div class="reel">
+
+				<article onclick="toBackend('view_synthetic', 'NYCU')">
+					<a href="#" class="image featured"><img src="images/NYCU.jpg" width="250" height="225"></a>
+					<header>
+						<h3><a href="#">I ❤ NYCU </a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_synthetic', 'phoenix')">
+					<a href="#" class="image featured"><img src="images/phoenix.jpg" width="250" height="225"></a>
+					<header>
+						<h3><a href="#">浩然圖書館 鳳凰來儀</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+				<!--'''
+					sadly, web file of our project is too large to be push to Github repository.
+					in order to use GitHub Pages, we can only shrink the files, partially show our project.
+					'''
+
+				<article onclick="toBackend('view_forwardfacing', 'cow')">
+					<a href="#" class="image featured"><img src="images/cow.jpg" width="250" height="225" alt="" /></a>
+					<header>
+						<h3><a href="#">台灣第一部真空管電腦</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_forwardfacing', 'gazebo')">
+					<a href="#" class="image featured"><img src="images/gazebo.jpg" width="250" height="225"
+							alt="" /></a>
+					<header>
+						<h3><a href="#">交大思園 九思亭</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_forwardfacing', 'BusStop')">
+					<a href="#" class="image featured"><img src="images/BusStop.jpg" width="250" height="225"
+							alt="" /></a>
+					<header>
+						<h3><a href="#">竹湖前 公車亭</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_forwardfacing', 'computer')">
+					<a href="#" class="image featured"><img src="images/computer.jpg" width="250" height="225"
+							alt="" /></a>
+					<header>
+						<h3><a href="#">工程三館地下室 電腦博物館</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_synthetic', 'wing')">
+					<a href="#" class="image featured"><img src="images/wing.jpg" width="250" height="225" alt="" /></a>
+					<header>
+						<h3><a href="#">東西景觀大道 海鷗塑像</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+
+				<article onclick="toBackend('view_forwardfacing', 'NCTU')">
+					<a href="#" class="image featured"><img src="images/NCTU.jpg" width="250" height="225" alt="" /></a>
+					<header>
+						<h3><a href="#">交大思園 校徽</a></h3>
+					</header>
+					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
+					</p>
+				</article>
+				-->
+			</div>
+		</section>
+
+		<!-- Main -->
+		<div class="wrapper style2">
+
+			<article id="main" class="container special">
+				<div style="position:relative;">
+					<a class="image background"><img src="images/CampusMap.png" alt="" /></a>
+					<!-- I ❤ NYCU -->
+					<myimg onclick="toBackend('view_synthetic', 'NYCU')" onmouseover="showPreview('NYCU.jpg')"
+						style="left:52%; top:52%;"></myimg>
+					<!-- phoenix -->
+					<myimg onclick="toBackend('view_synthetic', 'phoenix')" onmouseover="showPreview('phoenix.jpg')"
+						style="left:55%; top:53%;"></myimg>
+					<!--
+					// cow
+					<myimg onclick="toBackend('view_forwardfacing', 'cow')" onmouseover="showPreview('cow.jpg')"
+						style="left:52%; top:49%;"></myimg>
+					// gazebo
+					<myimg onclick="toBackend('view_forwardfacing', 'gazebo')" onmouseover="showPreview('gazebo.jpg')"
+						style="left: 59%; top:61%;"></myimg>
+					// bus 
+					<myimg onclick="toBackend('view_forwardfacing', 'BusStop')" onmouseover="showPreview('BusStop.jpg')"
+						style="left:78%; top:47%;"></myimg>
+					// computer 
+					<myimg onclick="toBackend('view_forwardfacing', 'computer')"
+						onmouseover="showPreview('computer.jpg')" style="left: 50%; top:50%;"></myimg>
+					// wing 
+					<myimg onclick="toBackend('view_synthetic', 'wing')" onmouseover="showPreview('wing.jpg')"
+						style="left: 46%; top:50%;"></myimg>
+					// logo 
+					<myimg onclick="toBackend('view_forwardfacing', 'NCTU')" onmouseover="showPreview('NCTU.jpg')"
+						style="left: 60%; top: 59%;"></myimg>
+					-->
+					
+					<img id="preview" src="images/CS.jpg" alt="preview window" style=" position: absolute;
+							right: -8%; top: 10%;	
+							height: 28%; width: 32%;
+							border: 10px rgb(139, 139, 139) solid;">
+					</img>
+				</div>
+			</article>
+
+		</div>
+
+
+
+		<!-- Footer -->
+		<div id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+
+						<!-- Contact -->
+						<section class="contact">
+							<ul class="icons">
+								<li><a href="https://github.com/LinCheAn/NeRF-in-NYCU"
+										class="icon brands fa-github"><span class="label">Github</span></a></li>
+							</ul>
+						</section>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/jquery.scrolly.min.js"></script>
+	<script src="assets/js/jquery.scrollex.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
+
+
+<script language=javascript>
+	function toBackend(type, exp_name) {
+		var exps = ["NYCU", "phoenix", "cow", "gazebo"]; 
+		// complete scene list: ["NYCU", "NCTU", "phoenix", "cow", "BusStop", "computer", "wing", "gazebo"]
+
+		if (exps.includes(exp_name)) {
+			const url = "http://140.113.24.102:8000/" + type + ".html?obj=" + exp_name;
+			window.open(url, "_blank");
+		}
+		else if (exp_name == "") { alert("本頁面目前未開放 / this page is currently unavailable"); }
+		else {
+			alert("未知的實驗項目! / unknown scene");
+		}
+	}
+
+	function showPreview(img_name) {
+		var window = document.getElementById("preview");
+		window.src = "images/" + img_name
+	}
+</script>
