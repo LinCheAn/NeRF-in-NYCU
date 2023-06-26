@@ -87,10 +87,6 @@
 					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
 					</p>
 				</article>
-				<!--'''
-					sadly, web file of our project is too large to be push to Github repository.
-					in order to use GitHub Pages, we can only shrink the files, partially show our project.
-					'''
 
 				<article onclick="toBackend('view_forwardfacing', 'cow')">
 					<a href="#" class="image featured"><img src="images/cow.jpg" width="250" height="225" alt="" /></a>
@@ -100,6 +96,11 @@
 					<p onclick="event.stopPropagation();">Commodo id natoque malesuada sollicitudin elit suscipit magna.
 					</p>
 				</article>
+
+				<!--'''
+					sadly, web file of our project is too large to be push to Github repository.
+					in order to use GitHub Pages, we can only shrink the files, partially show our project.
+					'''
 
 				<article onclick="toBackend('view_forwardfacing', 'gazebo')">
 					<a href="#" class="image featured"><img src="images/gazebo.jpg" width="250" height="225"
@@ -164,10 +165,10 @@
 					<!-- phoenix -->
 					<myimg onclick="toBackend('view_synthetic', 'phoenix')" onmouseover="showPreview('phoenix.jpg')"
 						style="left:55%; top:53%;"></myimg>
-					<!--
-					// cow
+					<!-- cow -->
 					<myimg onclick="toBackend('view_forwardfacing', 'cow')" onmouseover="showPreview('cow.jpg')"
 						style="left:52%; top:49%;"></myimg>
+					<!--
 					// gazebo
 					<myimg onclick="toBackend('view_forwardfacing', 'gazebo')" onmouseover="showPreview('gazebo.jpg')"
 						style="left: 59%; top:61%;"></myimg>
@@ -236,8 +237,7 @@
 
 <script language=javascript>
 	function toBackend(type, exp_name) {
-		var exps = ["NYCU", "phoenix", "cow", "gazebo"]; 
-		// complete scene list: ["NYCU", "NCTU", "phoenix", "cow", "BusStop", "computer", "wing", "gazebo"]
+		var exps = ["NYCU", "NCTU", "phoenix", "cow", "BusStop", "computer", "wing", "gazebo"]; 
 
 		if (exps.includes(exp_name)) {
 			const url = "http://140.113.24.102:8000/" + type + ".html?obj=" + exp_name;
