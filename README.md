@@ -2,9 +2,9 @@
   專題成員: 林哲安、陳尚奇、許登豪
   ![image](https://github.com/LinCheAn/NeRF-in-NYCU/assets/47052652/8bbb3a30-e690-4fcf-9897-b3529bfe7f5d)
   
-  Project Demo website(main): http://140.113.24.102:8000/
+  Project Demo website(main): https://linchean.github.io/NeRF-in-NYCU/
   
-  Project Demo website(optional): http://140.113.24.205:8080/
+  Project Demo website(optional): http://140.113.24.102:8000/ , http://140.113.24.205:8080/
   
   Project description: https://drive.google.com/drive/folders/1-0FsybBdTxKns8n5plzm1Ql2pfQ31b4l?usp=sharing
 
