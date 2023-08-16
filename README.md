@@ -4,8 +4,6 @@
   
   Project Demo website(main): https://linchean.github.io/NeRF-in-NYCU/
   
-  Project Demo website(optional): http://140.113.24.102:8000/ , http://140.113.24.205:8080/
-  
   Project description: https://drive.google.com/drive/folders/1-0FsybBdTxKns8n5plzm1Ql2pfQ31b4l?usp=sharing
 
 
